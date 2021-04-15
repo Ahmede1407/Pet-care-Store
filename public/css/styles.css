@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+
+/* Vars */
+:root {
+  --main-color: #ffd70a;
+  --body: #333;
+}
+
+/* custom styles */
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  color: var(--body);
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 0.3s cubic-bezier(0.38, 1.15, 0.7, 1.12);
+}
+*::selection {
+  background-color: var(--body);
+  color: var(--main-color);
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  height: 5000px;
+}
+html::-webkit-scrollbar {
+  width: 1.3rem;
+}
+html::-webkit-scrollbar-track {
+  background-color: var(--body);
+}
+html::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
+}
+
+section {
+  padding: 1rem 5%;
+}
+
+.fa-times {
+  transform: rotate(360deg);
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.7rem 2.5rem;
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+  color: var(--body);
+  background-color: var(--main-color);
+  position: relative;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  z-index: 0;
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  clip-path: polygon(0 0, 100% 0, 10% 25%, 0 100%);
+  z-index: -1;
+  background-color: #444;
+  transition: 0.3s cubic-bezier(0.38, 1.15, 0.7, 1.12);
+}
+.btn:hover:before {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+.btn:hover {
+  color: var(--main-color);
+}
+
+/* <!-- Header Section --> */
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  position: relative;
+}
+header.sticky {
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  z-index: 11;
+}
+
+#menu {
+  font-size: 2.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+.logo {
+  font-size: 2.5rem;
+}
+.logo i {
+  transform: rotate(-65deg);
+  color: var(--main-color);
+}
+
+.nav a {
+  font-size: 1.7rem;
+  margin: 0 1rem;
+}
+.nav a:hover {
+  color: var(--main-color);
+}
+
+header .icons i,
+header .icons a {
+  font-size: 2.5rem;
+  margin-left: 1.5rem;
+  cursor: pointer;
+}
+header .icons i:hover,
+header .icons a:hover {
+  color: var(--main-color);
+}
+
+#search-box {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  background: var(--main-color);
+  transform-origin: top;
+  transform: translateY(0);
+  opacity: 0;
+}
+#search-box.active {
+  transform: translateY(1);
+  opacity: 1;
+}
+#search-box #search {
+  width: 100%;
+  padding: 1rem;
+  text-transform: none;
+  font-size: 2rem;
+}
+#search-box #search::placeholder {
+  text-transform: capitalize;
+}
+#search-box label {
+  font-size: 3rem;
+  margin-left: 2rem;
+  cursor: pointer;
+}
+/* <!--  end of Header Section --> */
+
+/* <!-- Home Section --> */
+.home {
+  min-height: 75vh;
+  background: url(../img/home-bg.webp) no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+
+.home .content span {
+  font-size: 2rem;
+}
+.home .content h3 {
+  font-size: 5.5rem;
+}
+.home .content .btn {
+  background-color: #fff;
+}
+/* <!-- end of Home Section --> */
+
+/* Responsivity */
+@media screen and (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+  section {
+    padding: 1rem 3%;
+  }
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    text-align: center;
+    padding: 2rem;
+    z-index: 10;
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+    transform-origin: top;
+    transform: translateY(0);
+    opacity: 0;
+  }
+  .nav.toggle {
+    transform: translateY(1);
+    opacity: 1;
+  }
+
+  #menu {
+    display: block;
+  }
+  .nav a {
+    display: block;
+    font-size: 2rem;
+    margin: 1.5rem;
+  }
+
+  /* Home  */
+  .home {
+    background-position: left;
+  }
+  .home .content h3 {
+    font-size: 4.5rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  html {
+    font-size: 50%;
+  }
+  .home {
+    justify-content: center;
+  }
+  .home .content {
+    text-align: center;
+  }
+}
