@@ -25,3 +25,15 @@ $(document).ready(function () {
     }
   });
 });
+
+// Scroll Top
+function scrollTop() {
+  let scrollTop = document.querySelector("#scrollTop");
+
+  if (this.scrollY >= 560) {
+    scrollTop.classList.add("show-arrow");
+  } else {
+    scrollTop.classList.remove("show-arrow");
+  }
+}
+window.addEventListener("scroll", scrollTop);
