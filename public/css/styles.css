@@ -27,6 +27,7 @@
 html {
   font-size: 62.5%;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 html::-webkit-scrollbar {
   width: 1.3rem;
@@ -225,7 +226,7 @@ header .icons a:hover {
 /* <!-- end of Home Section --> */
 
 /* <!-- Categoriy Section --> */
-.category .card-container {
+.card-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -237,10 +238,10 @@ header .icons a:hover {
   margin: 2rem;
   text-align: center;
 }
-.category .card-container .card img {
+.card-container .card img {
   width: 100%;
 }
-.category .card-container .card h3 {
+.card-container .card h3 {
   font-size: 2rem;
   margin: 1rem 0;
 }
@@ -359,6 +360,117 @@ header .icons a:hover {
 
 /* <!-- end ofProducts Section --> */
 
+/* <!-- Offer Section --> */
+.offers .card-container .card {
+  flex: 1 1 40rem;
+  margin: 2rem;
+  position: relative;
+}
+.offers .card-container .card .card-content {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+}
+.offers .card-container .card .card-content span {
+  font-size: 2rem;
+}
+.offers .card-container .card .card-content h3 {
+  font-size: 3.5rem;
+  width: 20rem;
+}
+.offers .card-container .card:first-child .card-content .btn {
+  background-color: #fff;
+}
+.offers .card-container .card:last-child .card-content h3,
+.offers .card-container .card:last-child .card-content span {
+  color: #fff;
+}
+/* <!-- end of Offer Section --> */
+
+/* <!-- Contact Section --> */
+.contact {
+  background: url(../img/contact-bg.webp) no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 7rem;
+}
+.contact .heading i {
+  color: #fff;
+}
+.contact form {
+  padding: 2rem 10%;
+  text-align: center;
+}
+.contact .form-input {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.contact .form-input input,
+.contact textarea {
+  padding: 1rem 2rem;
+  margin: 1rem 0;
+  width: 49%;
+  font-size: 1.8rem;
+  border-radius: 0.5rem;
+  text-transform: none;
+}
+.contact .form-input input::placeholder,
+.contact textarea::placeholder {
+  text-transform: capitalize;
+}
+.contact textarea {
+  resize: none;
+  width: 100%;
+}
+.contact form .btn {
+  background-color: #fff;
+  cursor: pointer;
+}
+.contact form .btn:hover {
+  background-color: var(--body);
+}
+/* <!-- end of Contact Section --> */
+
+/* <!-- Footer Section --> */
+.footer .share-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 1rem 0;
+}
+.footer .share-icons a {
+  height: 5rem;
+  width: 5rem;
+  line-height: 5rem;
+  border-radius: 50%;
+  font-size: 2rem;
+  margin: 1rem;
+  text-align: center;
+  padding: 0;
+}
+.footer .share-icons i {
+  width: 5rem;
+  height: 5rem;
+  line-height: 5rem;
+}
+.footer .share-icons i:hover {
+  color: var(--main-color);
+}
+
+.footer .copy-rights {
+  padding: 2rem 1rem;
+  border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.footer .copy-rights span {
+  color: var(--main-color);
+  text-decoration: underline;
+}
+/* <!-- end of Footer Section --> */
+
 /* Responsivity */
 @media screen and (max-width: 991px) {
   html {
@@ -413,6 +525,18 @@ header .icons a:hover {
   .products .card-container .card .card-content {
     text-align: center;
   }
+
+  .offers .card-container .card .card-content h3 {
+    font-size: 3rem;
+    width: auto;
+  }
+
+  .contact form {
+    padding: 2rem;
+  }
+  .contact .form-input input {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -438,5 +562,12 @@ header .icons a:hover {
   .deal h3 {
     width: auto;
     font-size: 4rem;
+  }
+
+  .offers .card-container .card .card-content h3 {
+    width: 15rem;
+  }
+  .offers .card-container .card .card-content span {
+    font-size: 1.5rem;
   }
 }
